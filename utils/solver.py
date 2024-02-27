@@ -9,7 +9,7 @@ class Solver:
     def __init__(self, playwright, proxy="", headless=True, user_agent=None):
         self.playwright = playwright
         self.proxy = proxy
-        self.headless = False
+        self.headless = headless
         self.user_agent = user_agent
 
         self.start_browser(self.playwright)
