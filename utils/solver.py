@@ -9,7 +9,7 @@ class Solver:
     def __init__(self, playwright, proxy="", headless=True, user_agent=None):
         self.playwright = playwright
         self.proxy = proxy
-        self.headless = headless
+        self.headless = False
         self.user_agent = user_agent
 
         self.start_browser(self.playwright)
@@ -130,7 +130,7 @@ class Solver:
         self.url = url + "/" if not url.endswith("/") else url
         self.sitekey = sitekey
         self.invisible = invisible
-        self.context = self.browser.new_context(user_agent=self.user_agent)
+        self.context = self.browser.new_context()
         self.page = self.context.new_page()
 
         self.build_page_data()
